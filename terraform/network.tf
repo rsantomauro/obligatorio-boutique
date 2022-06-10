@@ -1,6 +1,9 @@
 # Se crea el VCP
 resource "aws_vpc" "boutique_vpc" {
-  cidr_block = "${var.cidr_block}.0.0/16"
+  cidr_block = "${var.cidr_block}0.0/16"
+  tags = {
+    Name = "boutique_vpc"
+  }
 }
 
 # Se crea el Internet Gateway dentro del VPC
@@ -12,14 +15,14 @@ resource "aws_internet_gateway" "boutique_igw" {
 }
 
 # Se crea los la RT
-resource "aws_default_route_table" "boutique-rt" {
+resource "aws_default_route_table" "boutique_rt" {
   default_route_table_id = aws_vpc.boutique_vpc.default_route_table_id
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.boutique_igw.id
   }
   tags = {
-    Name = "boutique-rt"
+    Name = "boutique_rt"
   }
 }
 
