@@ -26,26 +26,36 @@ resource "aws_default_route_table" "boutique_rt" {
   }
 }
 
-# Subnet privada para todas los microservicios
-resource "aws_subnet" "boutique_app_private-subnet" {
+# Subnet privada para todas los zonas a
+resource "aws_subnet" "boutique_az_a_private-subnet" {
   vpc_id                  = aws_vpc.boutique_vpc.id
-  cidr_block              = var.private_subnet_app
+  cidr_block              = var.private_subnet_a
   availability_zone       = var.vpc_aws_az_a
   # Se bloquea ip publica ya que solo va a estar el balanceador
   map_public_ip_on_launch = "false"
   tags = {
-    Name = "terraform-boutique_app-private-subnet"
+    Name = "terraform-boutique_az_a_private-subnet"
   }
 }
 
-# Subnet privada para todas las BDs
-resource "aws_subnet" "boutique_bd_private-subnet" {
+# Subnet privada para todas las zonas b
+resource "aws_subnet" "boutique_az_b_private-subnet" {
   vpc_id                  = aws_vpc.boutique_vpc.id
-  cidr_block              = var.private_subnet_bd
+  cidr_block              = var.private_subnet_b
   availability_zone       = var.vpc_aws_az_b
   # Se bloquea ip publica ya que solo va a estar el balanceador
   map_public_ip_on_launch = "false"
   tags = {
-    Name = "terraform-boutique_bd-private-subnet"
+    Name = "terraform-boutique_az_b_private-subnet"
+  }
+}
+
+resource "aws_subnet" "p6-public-subnet" {
+  vpc_id                  = aws_vpc.boutique_vpc.id
+  cidr_block              = var.public_subnet
+  availability_zone       = var.vpc_aws_az_a
+  map_public_ip_on_launch = "true"
+  tags = {
+    Name = "terraform-boutique-public-subnet"
   }
 }

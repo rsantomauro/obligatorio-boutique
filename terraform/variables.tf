@@ -14,13 +14,18 @@ variable "cidr_block" {
 }
 
 # Se define la porcion de host mediante la porcion de red
-variable "private_subnet_app" {
+variable "private_subnet_a" {
   default = "${var.cidr_block}1.0/24"
 }
 
 # Se define la porcion de host mediante la porcion de red
-variable "private_subnet_bd" {
+variable "private_subnet_b" {
   default = "${var.cidr_block}2.0/24"
+}
+
+# Se define la porcion de host mediante la porcion de red
+variable "public_subnet" {
+  default = "${var.cidr_block}3.0/24"
 }
 
 # Se asigna la zona de disponibilidad a
