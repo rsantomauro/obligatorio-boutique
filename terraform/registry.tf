@@ -6,8 +6,25 @@ resource "aws_ecr_repository" "boutique_ecr" {
   image_scanning_configuration {
     scan_on_push = true
   }
+}
 
-  tags = {
-    Name       = "boutique_ecr"
-  }
+## Build docker images and push to ECR
+resource "docker_registry_image" "boutique" {
+    for_each = toset(var.repository_list)
+    name = "${aws_ecr_repository.boutique_ecr.repository_url}:${each.key}"
+
+    build {
+        context = "../src/${each.key}"
+        dockerfile = "Dockerfile"
+    }  
+}
+
+# ajuste para  
+resource "docker_registry_image" "boutique_forcartservice" {
+    name = "${aws_ecr_repository.boutique_ecr.repository_url}:cartservice"
+
+    build {
+        context = "../src/cartservice/src"
+        dockerfile = "Dockerfile"
+    }  
 }
