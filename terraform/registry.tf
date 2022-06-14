@@ -19,7 +19,7 @@ resource "docker_registry_image" "boutique" {
     }  
 }
 
-# ajuste para  
+# ajuste para cartservice que tiene el dockerfile en otro lado
 resource "docker_registry_image" "boutique_forcartservice" {
     name = "${aws_ecr_repository.boutique_ecr.repository_url}:cartservice"
 
