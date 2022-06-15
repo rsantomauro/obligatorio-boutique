@@ -26,7 +26,7 @@ variable "vpc_aws_az_b" {
 variable "repository_list" {
   description = "List of repository names"
   type = list
-  default = ["adservice", "checkoutservice", "currencyservice", "emailservice", "frontend", "loadgenerator", "paymentservice", "productcatalogservice", "recommendationservice", "shippingservice, redis"]
+  default = ["adservice", "checkoutservice", "currencyservice", "emailservice", "frontend", "loadgenerator", "paymentservice", "productcatalogservice", "recommendationservice", "shippingservice", "redis"]
 }
 
 variable "all_microservices" {
