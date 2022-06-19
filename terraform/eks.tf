@@ -26,19 +26,10 @@ module "eks" {
     instance_types = ["t2.small"]
   }
 
-  # EKS Managed Node Group(s)
-  eks_managed_node_groups = {
-    blue = {}
-    green = {
-      min_size     = 1
-      max_size     = 10
-      desired_size = 1
-
-      instance_types = ["t2.small"]
-      capacity_type  = "SPOT"
-    }
-  }
-
   create_iam_role = "false"
   iam_role_arn    = "arn:aws:iam::320466714090:role/LabRole"
+
+  enable_irsa = "false"
+  attach_cluster_encryption_policy = "false"
+  iam_role_use_name_prefix = "false"
 }
