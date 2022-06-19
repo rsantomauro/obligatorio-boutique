@@ -8,3 +8,5 @@
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+plan.out
