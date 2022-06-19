@@ -1,0 +1,76 @@
+# Se crea el VCP
+resource "aws_vpc" "boutique_vpc" {
+  cidr_block = "${var.cidr_block}0.0/16"
+  /* tags = "${
+    map(
+     "Name", "boutique_vpc",
+     "kubernetes.io/cluster/${local.cluster_name}", "shared",
+    )
+  }" */
+}
+
+# Se crea el Internet Gateway dentro del VPC
+resource "aws_internet_gateway" "boutique_igw" {
+ vpc_id =  aws_vpc.boutique_vpc.id
+ tags = {
+    Name = "boutique_igw"
+  }
+}
+
+# Subnet privada para todas los zonas a
+resource "aws_subnet" "boutique_az_a_private-subnet" {
+  vpc_id                  = aws_vpc.boutique_vpc.id
+  cidr_block              = "${var.cidr_block}2.0/24"
+  availability_zone       = var.vpc_aws_az_a
+  # Se bloquea ip publica ya que solo va a estar el balanceador
+  map_public_ip_on_launch = "false"
+  tags = {
+    Name = "terraform-boutique_az_a_private-subnet"
+  }
+}
+
+# Subnet privada para todas las zonas b
+resource "aws_subnet" "boutique_az_b_private-subnet" {
+  vpc_id                  = aws_vpc.boutique_vpc.id
+  cidr_block              = "${var.cidr_block}3.0/24"
+  availability_zone       = var.vpc_aws_az_b
+  map_public_ip_on_launch = "false"
+  tags = {
+    Name = "terraform-boutique_az_b_private-subnet"
+  }
+}
+
+resource "aws_subnet" "public-subnet" {
+  vpc_id                  = aws_vpc.boutique_vpc.id
+  cidr_block              = "${var.cidr_block}1.0/24"
+  availability_zone       = var.vpc_aws_az_a
+  map_public_ip_on_launch = "true"
+  tags = {
+    Name = "terraform-boutique-public-subnet"
+  }
+}
+
+# Se crea los la RT
+resource "aws_default_route_table" "boutique_rt" {
+  default_route_table_id = aws_vpc.boutique_vpc.default_route_table_id
+  route {
+    cidr_block = "0.0.0.0/0"
+    gateway_id = aws_internet_gateway.boutique_igw.id
+  }
+  /* tags = "${
+    map(
+     "Name", "boutique_rt",
+     "kubernetes.io/cluster/${var.cluster-name}", "shared",
+    )
+  }" */
+}
+
+resource "aws_route_table_association" "boutique_rt_association" {
+  subnet_id      = "${aws_subnet.boutique_az_a_private-subnet.id}"
+  route_table_id = "${aws_route_table.boutique_rt.id}"
+}
+
+resource "aws_route_table_association" "boutique_rt_association2" {
+  subnet_id      = "${aws_subnet.boutique_az_b_private-subnet.id}"
+  route_table_id = "${aws_route_table.boutique_rt.id}"
+}

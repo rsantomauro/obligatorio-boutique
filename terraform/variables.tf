@@ -34,3 +34,8 @@ variable "all_microservices" {
   type = list
   default = ["adservice", "cartservice", "checkoutservice", "currencyservice", "emailservice", "frontend", "loadgenerator", "paymentservice", "productcatalogservice", "recommendationservice", "shippingservice", "redis"]
 }
+
+resource "random_string" "suffix" {
+  length = 8
+  special = false
+}
