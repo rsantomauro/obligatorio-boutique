@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: <IMAGE:TAG>
+        image: 320466714090.dkr.ecr.us-east-1.amazonaws.com/boutique_ecr:currencyservice
         ports:
         - name: grpc
           containerPort: 7000
