@@ -110,11 +110,12 @@ Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar
 
 ![alt text](docs/img/Arquitectura_Infra.drawio.png)
 
+
 ### Arquitectura
 
 Creamos dentro de una región dos zonas de disponibilidad para tener redundancia y alta disponibilidad con dos cluster de kubernetes, un load balancer para cargar bien las aplicaciones, y dos subnets privadas. 
 
-## Datos de la infraestructura
+## Datos de la infraestructura 
 
 
 ## Servicios de AWS
@@ -124,6 +125,32 @@ Creamos dentro de una región dos zonas de disponibilidad para tener redundancia
 - EKS - Kubernetes 
 - ECR - registry
 
+
+## Despliegue 📦
+
+**Despliegue de terraform**
+
+```
+cd ~/terraform
+terraform init
+terraform plan -out "plan.out" 
+terraform apply "plan.out"
+
+```
+
+
+**Generar nodos en AWS**
+
+Se debe dirigir al aks creado en terraform y crear un node group para el cluster.
+
+
+**Ejecución de bash**
+
+```
+cd ../scripts
+./eks.sh -c clustername -n namespace
+
+```
 
 ## Referencias bibliográficas 📚
 -	https://guides.github.com/features/mastering-markdown/
