@@ -15,7 +15,7 @@ Online Boutique consists of a 10-tier microservices application. The application
 web-based e-commerce app where users can browse items,
 add them to the cart, and purchase them.
 
-aaaaa
+
 
 ## Screenshots
 
@@ -46,7 +46,7 @@ Find **Protocol Buffers Descriptions** at the [`./pb` directory](./pb).
 | [recommendationservice](./src/recommendationservice) | Python        | Recommends other products based on what's given in the cart.                                                                      |
 | [adservice](./src/adservice)                         | Java          | Provides text ads based on given context words.                                                                                   |
 | [loadgenerator](./src/loadgenerator)                 | Python/Locust | Continuously sends requests imitating realistic user shopping flows to the frontend.                                              |
-
+| [redis](./src/redis)                 | Redis | Cache database.                                              |
 
 
 # Implementación de Soluciones Cloud 
@@ -66,7 +66,7 @@ Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar
 - [X] Aws cli
 - [x] Docker
 - [x] Kubernetes
-- Terminal Linux  (se sugiere usar un editor de código fuente en caso de querer realizar modificaciones).
+- [x] Terminal Linux  (se sugiere usar un editor de código fuente en caso de querer realizar modificaciones).
 
 ### Herramientas 🛠️
 
@@ -84,7 +84,7 @@ _Link a directorio de archivos terraform_
 
 ## Diagrama de arquitectura completo
 
-![alt text](https://github.com/rsantomauro/obligatorio-boutique/docs/img/Arquitectura_Infra.drawio.png)
+![alt text](docs/img/Arquitectura_Infra.drawio.png)
 
 ### Arquitectura
 
@@ -95,18 +95,19 @@ Creamos dentro de una región dos zonas de disponibilidad para tener redundancia
 
 ## Servicios de AWS
 
-VPC - Amazon Virtual Private Cloud
-ELB – Elastic Load balancer
-EKS - Kubernetes 
-ECR - registry
+- VPC - Amazon Virtual Private Cloud 
+- ELB – Elastic Load balancer
+- EKS - Kubernetes 
+- ECR - registry
 
 
 ## Referencias bibliográficas 📚
-•	https://guides.github.com/features/mastering-markdown/
-•	https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a
+-	https://guides.github.com/features/mastering-markdown/
+-	https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a
 
 ## Autores ✒️
-•	Rodrigo Santomuro - Trabajo y documentación - @rsantomauro
-•	Juan Ignacio Tabárez - Trabajo y documentación - @itabarez
-•	Virginia Grajales - Trabajo y documentación - @vikygj
+- **Rodrigo Santomuro** - *Trabajo y documentacion* - [@rsantomauro](https://github.com/rsantomauro)
+- **Virginia Grajales** - *Trabajo y documentación* - [@vikygj](https://github.com/vikygj)
+- **Juan Ignacio Tabárez** - *Trabajo y documentación* - [@itabarez](https://github.com/itabarez)
+
 
