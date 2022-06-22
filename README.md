@@ -80,7 +80,22 @@ Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar
 
 ## Código de la infraestructura automatizada 
 
-_Link a directorio de archivos terraform_
+_Los archivos con el código automatizado en terraform se encuentran en el directorio_ **terraform** at [`./terraform`](./terraform).
+
+
+| Archivo                                              | Descripción                                                                                                                      |
+| ----------------------------------------------------  | ---------------------------------------------------------------------------------- |
+| [backend](./terraform/backend.tf)                     | Providers requeridos para su correcto funcionamiento |
+| [data](./terraform/data.tf)                           | Carga de datos que se utilizaran luego en el código |
+| [eks](./terraform/eks.tf)                             | Configuración de K8s |
+| [local](./terraform/locals.tf)                        | Variables locales donde se definen nombres y URL's|
+| [network](./terraform/network.tf)                     | Configuración de la VPC y todos sus componentes |
+| [output](./terraform/output.tf)                       | Informacion devuelta luego de la ejecución |
+| [provider](./terraform/provider.tf)                   | Providers de AWS y Docker |
+| [registry](./terraform/registry.tf)                   | Genera imágenes y las sube al repositorio ECR |
+| [security-groups](./terraform/security-groups.tf)     | Grupos de seguridad definidos |
+| [variables](./terraform/variables.tf)                 | Variables utilizadas |
+
 
 ## Diagrama de arquitectura completo
 
