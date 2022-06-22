@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [ $# -lt 3 ]; then
+if [ $# -lt 2 ]; then
     echo "-c for clustername  - created cluster name"
     echo "-n for namespace    - creation namespace"
     exit 1
 fi
 
-while getopts c:n:s: flag
+while getopts c:n: flag
 do
     case "${flag}" in
         c) clustername=${OPTARG};;
