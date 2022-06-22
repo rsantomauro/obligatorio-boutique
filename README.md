@@ -65,8 +65,8 @@ Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar
 - [x] Git
 - [X] Aws cli
 - [x] Docker
-- [x] Kubernetes
-- [x] Terminal Linux  (se sugiere usar un editor de código fuente en caso de querer realizar modificaciones).
+- [x] Kubectl
+- [x] Terminal Linux (para ejecución de bash)
 
 ### Herramientas 🛠️
 
@@ -121,35 +121,32 @@ Creamos dentro de una región dos zonas de disponibilidad para tener redundancia
 ## Servicios de AWS
 
 - VPC - Amazon Virtual Private Cloud 
-- ELB – Elastic Load balancer
 - EKS - Kubernetes 
 - ECR - registry
 
 
 ## Despliegue 📦
 
-**Despliegue de terraform**
+### Despliegue de terraform
 
 ```
 cd ~/terraform
 terraform init
 terraform plan -out "plan.out" 
 terraform apply "plan.out"
-
 ```
 
 
-**Generar nodos en AWS**
+### Generar nodos en AWS
 
 Se debe dirigir al aks creado en terraform y crear un node group para el cluster.
 
 
-**Ejecución de bash**
+### Ejecución de bash
 
 ```
 cd ../scripts
 ./eks.sh -c clustername -n namespace
-
 ```
 
 ## Referencias bibliográficas 📚
