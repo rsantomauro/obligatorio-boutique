@@ -2,8 +2,7 @@
 
 if [ $# -lt 3 ]; then
     echo "-c for clustername  - created cluster name"
-    echo "-n for nodename     - creation node name"
-    echo "-s for namespace    - creation namespace"
+    echo "-n for namespace    - creation namespace"
     exit 1
 fi
 
@@ -11,8 +10,7 @@ while getopts c:n:s: flag
 do
     case "${flag}" in
         c) clustername=${OPTARG};;
-        n) nodename=${OPTARG};;
-        s) namespace=${OPTARG};;
+        n) namespace=${OPTARG};;
     esac
 done
 

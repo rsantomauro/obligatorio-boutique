@@ -13,26 +13,10 @@ variable "cidr_block" {
     default = "172.16."
 }
 
-# Se asigna la zona de disponibilidad a
-variable "vpc_aws_az_a" {
-  default = "us-east-1a"
-}
-
-# Se asigna la zona de disponibilidad b
-variable "vpc_aws_az_b" {
-  default = "us-east-1b"
-}
-
 variable "repository_list" {
   description = "List of repository names"
   type = list
   default = ["adservice", "checkoutservice", "currencyservice", "emailservice", "frontend", "loadgenerator", "paymentservice", "productcatalogservice", "recommendationservice", "shippingservice", "redis"]
-}
-
-variable "all_microservices" {
-  description = "List of repository names"
-  type = list
-  default = ["adservice", "cartservice", "checkoutservice", "currencyservice", "emailservice", "frontend", "loadgenerator", "paymentservice", "productcatalogservice", "recommendationservice", "shippingservice", "redis"]
 }
 
 resource "random_string" "suffix" {
