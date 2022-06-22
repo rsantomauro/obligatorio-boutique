@@ -46,3 +46,67 @@ Find **Protocol Buffers Descriptions** at the [`./pb` directory](./pb).
 | [recommendationservice](./src/recommendationservice) | Python        | Recommends other products based on what's given in the cart.                                                                      |
 | [adservice](./src/adservice)                         | Java          | Provides text ads based on given context words.                                                                                   |
 | [loadgenerator](./src/loadgenerator)                 | Python/Locust | Continuously sends requests imitating realistic user shopping flows to the frontend.                                              |
+
+
+
+# Implementación de Soluciones Cloud 
+### Obligatorio 2022 
+
+## Comenzando 🚀
+
+Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar la arquitectura e infraestructura de una aplicación que actualmente corre en un datacenter on-premise llamada Online Bouteque con el objetivo de expandir sus operaciones por todo el mundo, haciendo llegar sus servicios de e-commerce y retail, a todo el continente de América.
+
+....Basado en una arquitectura de microservicios para correr sobre containers cuyo ciclo de integración continua ya se encuentra configurado y la solución ya se encuentra disponible para desplegar por parte del equipo de DevOps.
+
+
+## Pre-requisitos 📋
+
+- [x] Terraform
+- [x] Git
+- [X] Aws cli
+- [x] Docker
+- [x] Kubernetes
+- Terminal Linux  (se sugiere usar un editor de código fuente en caso de querer realizar modificaciones).
+
+### Herramientas 🛠️
+
+- GitHub
+- AWS
+- GO
+- Java
+- Pyhton
+- Node.js
+
+
+## Código de la infraestructura automatizada 
+
+_Link a directorio de archivos terraform_
+
+## Diagrama de arquitectura completo
+
+![alt text](https://github.com/rsantomauro/obligatorio-boutique/docs/img/Arquitectura_Infra.drawio.png)
+
+### Arquitectura
+
+Creamos dentro de una región dos zonas de disponibilidad para tener redundancia y alta disponibilidad con dos cluster de kubernetes, un load balancer para cargar bien las aplicaciones, y dos subnets privadas. 
+
+## Datos de la infraestructura
+
+
+## Servicios de AWS
+
+VPC - Amazon Virtual Private Cloud
+ELB – Elastic Load balancer
+EKS - Kubernetes 
+ECR - registry
+
+
+## Referencias bibliográficas 📚
+•	https://guides.github.com/features/mastering-markdown/
+•	https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a
+
+## Autores ✒️
+•	Rodrigo Santomuro - Trabajo y documentación - @rsantomauro
+•	Juan Ignacio Tabárez - Trabajo y documentación - @itabarez
+•	Virginia Grajales - Trabajo y documentación - @vikygj
+
