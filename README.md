@@ -56,7 +56,6 @@ Find **Protocol Buffers Descriptions** at the [`./pb` directory](./pb).
 
 Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar la arquitectura e infraestructura de una aplicación que actualmente corre en un datacenter on-premise llamada Online Bouteque con el objetivo de expandir sus operaciones por todo el mundo, haciendo llegar sus servicios de e-commerce y retail, a todo el continente de América.
 
-....Basado en una arquitectura de microservicios para correr sobre containers cuyo ciclo de integración continua ya se encuentra configurado y la solución ya se encuentra disponible para desplegar por parte del equipo de DevOps.
 
 
 ## Pre-requisitos 📋
@@ -76,6 +75,12 @@ Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar
 - Java
 - Pyhton
 - Node.js
+
+### Providers :truck:
+
+- [Docker v2.15.0](https://registry.terraform.io/providers/kreuzwerker/docker/2.15.0/docs)
+- [Kubernetes v2.0.1](https://registry.terraform.io/providers/hashicorp/kubernetes/2.0.1/docs) 
+- [eks ~>18.0](https://registry.terraform.io/modules/terraform-aws-modules/eks/aws/18.0.0)
 
 
 ## Código de la infraestructura automatizada 
@@ -111,11 +116,15 @@ Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar
 ![alt text](docs/img/Arquitectura_Infra.drawio.png)
 
 
-### Arquitectura
+### Arquitectura :gear:
 
 Creamos dentro de una región dos zonas de disponibilidad para tener redundancia y alta disponibilidad con dos cluster de kubernetes, un load balancer para cargar bien las aplicaciones, y dos subnets privadas. 
 
 ## Datos de la infraestructura 
+
+| Grupo                                              | Puertos Habilitados            | Uso                                                                                                                |
+| ----------------------------------------------------  | ----------------------------- | ----------------------------------------------------- |
+| boutique_eks_sg   |  80    | Permite el acceso a los servicios de eks
 
 
 ## Servicios de AWS
@@ -126,6 +135,10 @@ Creamos dentro de una región dos zonas de disponibilidad para tener redundancia
 
 
 ## Despliegue 📦
+
+1. Clonar repositorio: git clone 
+
+
 
 ### Despliegue de terraform
 
@@ -149,9 +162,21 @@ cd ../scripts
 ./eks.sh -c clustername -n namespace
 ```
 
+## Versiones 🧬
+
+- WSL2 UBUNTU
+- Docker v20.10.15
+- Terraform v1.1.9
+- Aws v2.4.27
+- EKSCTL v0.102.0
+- EKS Cluster v1.22
+
+
 ## Referencias bibliográficas 📚
 -	https://guides.github.com/features/mastering-markdown/
 -	https://gist.github.com/Villanuevand/6386899f70346d4580c723232524d35a
+-	https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md
+
 
 ## Autores ✒️
 - **Rodrigo Santomuro** - *Trabajo y documentacion* - [@rsantomauro](https://github.com/rsantomauro)
