@@ -136,11 +136,10 @@ Creamos dentro de una región dos zonas de disponibilidad para tener redundancia
 
 ## Despliegue 📦
 
-1. Clonar repositorio: git clone 
+1. Clonar repositorio 
+```git clone https://github.com/rsantomauro/obligatorio-boutique```
 
-
-
-### Despliegue de terraform
+2. Entrar a terraform, iniciarlo y ejecutar el plan.out
 
 ```
 cd ~/terraform
@@ -149,14 +148,10 @@ terraform plan -out "plan.out"
 terraform apply "plan.out"
 ```
 
+3. Generar nodos en AWS
+Se debe dirigir al **EKS** creado en terraform y crear un node group para el cluster.
 
-### Generar nodos en AWS
-
-Se debe dirigir al aks creado en terraform y crear un node group para el cluster.
-
-
-### Ejecución de bash
-
+4. Ejecución de bash
 ```
 cd ../scripts
 ./eks.sh -c clustername -n namespace
