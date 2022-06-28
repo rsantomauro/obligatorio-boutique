@@ -30,7 +30,7 @@ module "eks" {
   create_iam_role = false
   iam_role_name = "LabRole"
   iam_role_use_name_prefix = "true"
-  iam_role_arn    = "arn:aws:iam::320466714090:role/LabRole"
+  iam_role_arn    = "arn:aws:iam::${var.arn_id}:role/LabRole"
 
 
   enable_irsa = "false"

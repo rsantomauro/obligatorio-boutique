@@ -23,3 +23,8 @@ resource "random_string" "suffix" {
   length = 8
   special = false
 }
+
+variable "arn_id" {
+  description = "ARN ID"
+  default = "320466714090"
+}
