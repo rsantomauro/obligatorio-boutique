@@ -189,6 +189,11 @@ Se crearan todos los servicios y devolvera la url para ingresar a la aplicación
 
 ![alt text](docs/img/creaservicios.jpg)
 
+**Ingresamos a la URL:**
+
+![alt text](docs/img/aplicacion.jpg)
+
+
 ## Versiones 🧬
 
 - WSL2 UBUNTU
