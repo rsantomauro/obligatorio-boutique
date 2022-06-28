@@ -179,7 +179,8 @@ Se debe dirigir al **EKS** creado en terraform y crear un nodegroup para el clus
 
 ![alt text](docs/img/cluster5.jpg)
 
-Darle a la opcion create y esperar a que el estado aparezca como activo.
+Darle a la opcion **create** y esperar a que el estado aparezca como activo.
+
 ![alt text](docs/img/cluster6.jpg)
 
 3.2 Volver a la terminal para finalizar la ejecucion del script.
