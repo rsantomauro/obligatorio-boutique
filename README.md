@@ -151,25 +151,22 @@ Esto generará el siguiente output:
 
 ![alt text](docs/img/output.jpg)
 
-3. Generar nodos en AWS
-
-Se debe dirigir al **EKS** creado en terraform y crear un node group para el cluster.
-
-4. Ejecución de bash
+3. Ejecución de bash
 ```
 cd ../scripts
 chmod 777 eks.sh
 ```
 
-Para una correcta ejecucion se debe tomar el resultado generado en el output del nombre del cluster y el ecr:
+Para una correcta ejecución se debe tomar el resultado generado en el output del nombre del cluster y el ecr:
 ```
 ./eks.sh -c boutique-eks-GJeN6uxP -n boutique-ns -r 320466714090.dkr.ecr.us-east-1.amazonaws.com/boutique_ecr
 ```
 
 
 
-5. Crear en el cluster de AWS el nodegroup
-ir al EKS en compute 
+4. Crear en el cluster de AWS el nodegroup
+
+Se debe dirigir al **EKS** creado en terraform y crear un node group para el cluster.
 
 ## Versiones 🧬
 
