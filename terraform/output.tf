@@ -14,6 +14,6 @@ output "cluster_endpoint" {
 }
 
 output "ecr_name" {
-  description = "ECR name, can be use to fullfill the yaml k8s deployment image and tag"
+  description = "ECR url, can be use to fullfill the yaml k8s deployment image and tag"
   value       = aws_ecr_repository.boutique_ecr.repository_url
 }

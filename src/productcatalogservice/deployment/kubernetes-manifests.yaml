@@ -16,7 +16,7 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: server
-        image: 320466714090.dkr.ecr.us-east-1.amazonaws.com/boutique_ecr:productcatalogservice
+        image: imageTag
         ports:
         - containerPort: 3550
         env:

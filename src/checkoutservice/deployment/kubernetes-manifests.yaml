@@ -15,7 +15,7 @@ spec:
       serviceAccountName: default
       containers:
         - name: server
-          image: 320466714090.dkr.ecr.us-east-1.amazonaws.com/boutique_ecr:checkoutservice
+          image: imageTag
           ports:
           - containerPort: 5050
           readinessProbe:
