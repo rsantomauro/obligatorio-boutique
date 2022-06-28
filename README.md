@@ -122,8 +122,8 @@ Creamos dentro de una región dos zonas de disponibilidad para tener redundancia
 
 ## Datos de la infraestructura 
 
-| Componente                                               |  Nombre  | Valor           | Uso                                                                                                                |
-| ----------------------------------------------------  | ----------------------------- | ----------------------------------------------------- |
+| Componente                 |  Nombre  | Valor           | Uso                                                                                                     |
+| --------------------------- | ---------|-------------------- | ----------------------------------------------------- |
 | Grupo de seguridad  | boutique_eks_sg   |  Puerto 80    | Permite el acceso a los servicios de eks|
 | CIDR  | cidr_block   |  172.16.0.0 /16    | Configurar la red de las subnets|
 | Private subnet 1 | boutique_vpc-private-us-east-1a    |  172.16.1.0 /24    | Configurar la red de las subnets|
