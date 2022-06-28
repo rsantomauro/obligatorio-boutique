@@ -165,10 +165,28 @@ Para una correcta ejecución se debe tomar el resultado generado en el output de
 La ejecución devolvera el siguiente resultado: 
 ![alt text](docs/img/ejecbash.jpg)
 
-4. Crear en el cluster de AWS el nodegroup
+3.1 Crear en el cluster de AWS el nodegroup
 
 Se debe dirigir al **EKS** creado en terraform y crear un nodegroup para el cluster.
 
+![alt text](docs/img/cluster1.jpg)
+
+![alt text](docs/img/cluster2.jpg)
+
+![alt text](docs/img/cluster3.jpg)
+
+![alt text](docs/img/cluster4.jpg)
+
+![alt text](docs/img/cluster5.jpg)
+
+Darle a la opcion create y esperar a que el estado aparezca como activo.
+![alt text](docs/img/cluster6.jpg)
+
+3.2 Volver a la terminal para finalizar la ejecucion del script.
+
+Se crearan todos los servicios y devolvera la url para ingresar a la aplicación. 
+
+![alt text](docs/img/creaservicios.jpg)
 
 ## Versiones 🧬
 
