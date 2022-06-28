@@ -162,11 +162,13 @@ Para una correcta ejecución se debe tomar el resultado generado en el output de
 ./eks.sh -c boutique-eks-GJeN6uxP -n boutique-ns -r 320466714090.dkr.ecr.us-east-1.amazonaws.com/boutique_ecr
 ```
 
-
+La ejecución devolvera el siguiente resultado: 
+![alt text](docs/img/ejecbash.jpg)
 
 4. Crear en el cluster de AWS el nodegroup
 
-Se debe dirigir al **EKS** creado en terraform y crear un node group para el cluster.
+Se debe dirigir al **EKS** creado en terraform y crear un nodegroup para el cluster.
+
 
 ## Versiones 🧬
 
