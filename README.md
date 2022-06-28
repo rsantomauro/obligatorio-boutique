@@ -142,20 +142,34 @@ Creamos dentro de una región dos zonas de disponibilidad para tener redundancia
 2. Entrar a terraform, iniciarlo y ejecutar el plan.out
 
 ```
-cd ~/terraform
+cd obligatorio-boutique/terraform
 terraform init
 terraform plan -out "plan.out" 
 terraform apply "plan.out"
 ```
+Esto generará el siguiente output:
+
+![alt text](docs/img/output.jpg)
 
 3. Generar nodos en AWS
+
 Se debe dirigir al **EKS** creado en terraform y crear un node group para el cluster.
 
 4. Ejecución de bash
 ```
 cd ../scripts
-./eks.sh -c clustername -n namespace
+chmod 777 eks.sh
 ```
+
+Para una correcta ejecucion se debe tomar el resultado generado en el output del nombre del cluster y el ecr:
+```
+./eks.sh -c boutique-eks-GJeN6uxP -n boutique-ns -r 320466714090.dkr.ecr.us-east-1.amazonaws.com/boutique_ecr
+```
+
+
+
+5. Crear en el cluster de AWS el nodegroup
+ir al EKS en compute 
 
 ## Versiones 🧬
 
