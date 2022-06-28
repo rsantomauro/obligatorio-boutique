@@ -100,6 +100,15 @@ Somos la consultora BitBeat y hemos sido contratados para modernizar y desplegar
 | [security-groups](./terraform/security-groups.tf)     | Grupos de seguridad definidos |
 | [variables](./terraform/variables.tf)                 | Variables utilizadas |
 
+**Listado de variables utilizadas en la automatización**
+| Variable                           | Valor por defecto                              | Uso                                                                                          |
+| ----------------------------------------------------  | ------------------------------ | ---------------------------------------------------- |
+| perfil                           | default |   Perfil de conexión para aws |
+| region                           | us-east-1 |   Región en la que se crearan los servicios |
+| cidr_block                           | 172.16. |   Asignacion de red |
+| repository_list                           | "adservice", "checkoutservice", "currencyservice", "emailservice", "frontend", "loadgenerator", "paymentservice", "productcatalogservice", "recommendationservice", "shippingservice", "redis" |   Lista de todos los microservicios para subir al ECR |
+| suffix                           | random |   Letras o numeros al azar, se utiliza para nombrar diferentes componentes |
+| arn_id                           | **_MODIFICAR_** |  Modificar para cambiar el ID del arn para el rol: LabRol |
 
 
 **_Los archivos con el código automatizado en bash se encuentran en el directorio_** **scripts** at [`./scripts`](./scripts).
