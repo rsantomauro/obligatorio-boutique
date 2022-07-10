@@ -56,6 +56,20 @@ kubectl create -f recommendationservice/deployment/kubernetes-manifests.yaml
 kubectl create -f redis/deployment/kubernetes-manifests.yaml
 kubectl create -f shippingservice/deployment/kubernetes-manifests.yaml
 
+# Para crear replicas en los dos nodos
+# kubectl scale deployments/adservice --replicas=2 $namespace
+# kubectl scale deployments/cartservice --replicas=2 $namespace
+# kubectl scale deployments/checkoutservice --replicas=2 $namespace
+# kubectl scale deployments/currencyservice --replicas=2 $namespace
+# kubectl scale deployments/emailservice --replicas=2 $namespace
+# kubectl scale deployments/frontend --replicas=2 $namespace
+# kubectl scale deployments/loadgenerator --replicas=2 $namespace
+# kubectl scale deployments/paymentservice --replicas=2 $namespace
+# kubectl scale deployments/productcatalogservice --replicas=2 $namespace
+# kubectl scale deployments/recommendationservice --replicas=2 $namespace
+# kubectl scale deployments/redis --replicas=2 $namespace
+# kubectl scale deployments/shippingservice --replicas=2 $namespace
+
 # Se restaura el ECR url por el guardao en la constante
 sed -i "s|$ecr:adservice|$REPO|g" adservice/deployment/kubernetes-manifests.yaml
 sed -i "s|$ecr:cartservice|$REPO|g" cartservice/deployment/kubernetes-manifests.yaml
